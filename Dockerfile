@@ -22,7 +22,7 @@ WORKDIR /app
 COPY . .
 
 # Build the project (if necessary)
-RUN ./mvnw clean package
+RUN mvn clean package
 
 # Command to run the Spring Boot application
 CMD ["java", "-jar", "target/CURD-RestAPI-0.0.1-SNAPSHOT.jar"]
