@@ -9,7 +9,7 @@ public class CorsConfig implements WebMvcConfigurer {
     @Override
     public void addCorsMappings(CorsRegistry registry) {
         registry.addMapping("/**")
-                .allowedOrigins("https://curd-4oc0hdsmd-anupams-projects-c29cb1bc.vercel.app") // Allow requests from this origin
+                .allowedOrigins("https://curd-api-phi.vercel.app") // Allow requests from this origin
                 .allowedMethods("GET", "POST", "PUT", "DELETE") // Allow these methods
                 .allowedHeaders("*"); // Allow all headers
     }
