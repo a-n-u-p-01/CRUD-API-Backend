@@ -19,4 +19,4 @@ WORKDIR /app
 COPY target/CURD-RestAPI-0.0.1-SNAPSHOT.jar app.jar
 
 # Command to run the Spring Boot application
-ENTRYPOINT ["java", "-jar", "/app/app.jar"]
+CMD ["java", "-jar", "target/CURD-RestAPI-0.0.1-SNAPSHOT.jar"]
