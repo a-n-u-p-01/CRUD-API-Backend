@@ -1,5 +1,5 @@
-# Use a base image that includes Java
-FROM openjdk:17-jdk-alpine
+# Use a base image that includes Java and Maven
+FROM maven:3.8.4-openjdk-17-slim AS build
 
 # Set the working directory inside the container
 WORKDIR /app
@@ -7,22 +7,17 @@ WORKDIR /app
 # Copy the entire project directory into the container
 COPY . .
 
-# Build the project (if necessary)
-RUN ./mvnw clean package
-
-# Command to run the Spring Boot application
-CMD ["java", "-jar", "target/CURD-RestAPI-0.0.1-SNAPSHOT.jar"]
-# Use a base image that includes Java
-FROM openjdk:17-jdk-alpine
-
-# Set the working directory inside the container
-WORKDIR /app
-
-# Copy the entire project directory into the container
-COPY . .
-
-# Build the project (if necessary)
+# Build the project using Maven
 RUN mvn clean package
 
+# Second stage: Use a smaller base image to run the Java application
+FROM openjdk:17-jdk-alpine
+
+# Set the working directory inside the container
+WORKDIR /app
+
+# Copy the compiled artifact from the build stage
+COPY --from=build /app/target/CURD-RestAPI-0.0.1-SNAPSHOT.jar /app/app.jar
+
 # Command to run the Spring Boot application
-CMD ["java", "-jar", "target/CURD-RestAPI-0.0.1-SNAPSHOT.jar"]
+CMD ["java", "-jar", "app.jar"]
