@@ -2,13 +2,14 @@ This is a simple API that performs CRUD operations for managing student data. I 
 
 The frontend part of the application, which consumes this API, is available in the following repository: https://github.com/a-n-u-p-01/CURD-API-Frontend.
 
-<h1>Features:<\h1>
+<h1>Features:</h1>
+
 Create: Add new student records.
 Read: Retrieve student details.
 Update: Modify existing student records.
 Delete: Remove student records.
-Technologies Used:
+<h1>Technologies Used:</h1>
+
 Backend: Spring Boot
 Frontend: React (located in the provided repository)
-Database: MongoDB (or any database of your choice)
 This project aims to provide a hands-on understanding of how a backend API interacts with a frontend application to perform essential CRUD operations in a student management system.
