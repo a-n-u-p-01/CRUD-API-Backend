@@ -2,7 +2,7 @@ This is a simple API that performs CRUD operations for managing student data. I 
 
 The frontend part of the application, which consumes this API, is available in the following repository: https://github.com/a-n-u-p-01/CURD-API-Frontend.
 
-Features:
+<h1>Features:<\h1>
 Create: Add new student records.
 Read: Retrieve student details.
 Update: Modify existing student records.
